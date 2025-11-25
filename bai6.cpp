@@ -1,21 +1,22 @@
 #include <stdio.h>
-int SoNguyenTo(int n) {
-	if ( n < 2) return 0;
+#include <stdbool.h>
+bool SoNguyenTo(int n) {
+	if ( n < 2) return false;
 	for (int i = 2; i <= n / 2; i++) {
-		if ( n % i == 0) return 0;
+		if ( n % i == 0) return false;
 	}
-	return 1;
+	return true;
 }
 int main() {
-	int x;
+	int n;
 	printf("Nhap so n: ");
-	scanf("%d", &x);
+	scanf("%d", &n);
 	
 	
-	if ( SoNguyenTo(x) == 0) {
-		printf("%d khong la so nguyen to", x);
+	if (SoNguyenTo(n)) {
+		printf("%d la so nguyen to", n);
 	} else {
-		printf("%d la so nguyen to", x);
+		printf("%d khong la so nguyen to", n);
 	}
 return 0;
 }
